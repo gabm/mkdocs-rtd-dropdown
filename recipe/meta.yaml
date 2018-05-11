@@ -16,6 +16,8 @@ build:
 requirements:
   build:
     - python
+    - mkdocs
+    
   run:
     - python
     - mkdocs

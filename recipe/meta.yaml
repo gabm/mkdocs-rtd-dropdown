@@ -1,0 +1,21 @@
+package:
+  name: mkdocs-rtd-dropdown
+  version: "0.0.11"
+
+source:
+  git_url: https://github.com/cjsheets/mkdocs-rtd-dropdown.git
+  git_rev: v0.0.11
+
+
+build:
+  number: 0
+  detect_binary_files_with_prefix: true
+  script:
+    - python setup.py install
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - mkdocs

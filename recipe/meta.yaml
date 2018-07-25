@@ -8,7 +8,10 @@ source:
 
 
 build:
-  number: 0
+  noarch: python
+  entry_points:
+    - rtd-dropdown = rtd_dropdown
+  number: 1
   detect_binary_files_with_prefix: true
   script:
     - python setup.py install

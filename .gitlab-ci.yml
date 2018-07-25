@@ -33,25 +33,6 @@ test-linux-intel64:
   <<: *test-linux
   image: draive-ci-intel64:latest
 
-build-linux-aarch64:
-  <<: *build-linux
-  image: draive-ci-aarch64:latest
-
-test-linux-aarch64:
-  <<: *test-linux
-  image: draive-ci-aarch64:latest
-
-build-win-intel64:
-  stage: build
-  tags:
-    - win
-  script:
-    - conda install -y conda-build
-    - conda-build recipe --croot $(Join-Path (pwd) builds) --no-test
-  artifacts:
-    paths:
-      - $(Join-Path (pwd) builds)/win-64/*.tar.bz2
-
 test-win-intel64:
   stage: test
   tags:
@@ -59,7 +40,6 @@ test-win-intel64:
   script:
     - conda install -y conda-build
     - conda-build recipe --croot $(Join-Path (pwd) builds) -t
-
 
 deploy-to-dev:
   image: draive-ci-intel64:latest
